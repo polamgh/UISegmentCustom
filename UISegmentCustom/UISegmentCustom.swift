@@ -136,5 +136,19 @@ class UISegmentCustom: UIControl {
         layer.cornerRadius = frame.height/2
         updateView()
     }
+    
+    func changeSelectedSegment(index : Int)  {
+        for (buttonIndex , btn)   in buttons.enumerated() {
+            btn.setTitleColor(textColor, for: .normal)
+        }
+        selectedSegmentIndex = index
+        let selectorStartPosition = frame.width - (frame.width / CGFloat(buttons.count)) * (CGFloat(index + 1 ))
+        UIView.animate(withDuration: 0.1 , animations: {
+            self.selector.frame.origin.x = selectorStartPosition
+        })
+        buttons[index].setTitleColor(selectorTextColor, for: .normal)
+        selectorTitle.text = buttons[index].titleLabel?.text
+    }
+
 
 }
