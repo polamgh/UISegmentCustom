@@ -2,8 +2,6 @@
 UISegment class custom
 
 
-CREATE BY MOHAMMAD ALI GHANAVATI
-
 IOS Swift4
 
 
